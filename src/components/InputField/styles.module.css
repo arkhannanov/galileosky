@@ -1,42 +1,53 @@
-.fieldsContainer {
-    margin-top: 20px;
-}
-
 .inputFieldContainer {
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px; /* Space between input fields */
-}
-
-.inputField {  /* Local class for input fields */
-    padding: 10px;
-    border: 1px solid #ccc; /* Light gray border */
-    border-radius: 5px;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
-}
-
-.inputField:focus {
-    border-color: #0070f3; /* Blue border on focus */
-    outline: none; /* Remove default outline */
+    gap: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .label {
-    margin-bottom: 5px; /* Space between label and input field */
+    font-size: 1rem;
     font-weight: bold;
 }
 
+.inputAndIcon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.inputField {
+    flex: 1;
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-right: 3.5rem; /* Отступ для иконки справа */
+}
+
+.inputField:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
 .deleteButton {
-    background-color: #ff4c4c; /* Red color for delete button */
-    color: white;
+    position: absolute;
+    right: 0.5rem;
+    background: none;
     border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
     cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
+    font-size: 1.5rem;
+    color: #d9534f;
+    padding: 0.5rem;
 }
 
 .deleteButton:hover {
-    background-color: darkred; /* Darker on hover */
+    color: #b52f2f;
+}
+
+.errorMessage {
+    font-size: 0.875rem;
+    color: #d9534f;
+    margin-top: 0.25rem;
 }
