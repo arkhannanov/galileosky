@@ -17,7 +17,6 @@ const FormApp = () => {
     const [inputFields, setInputFields] = useState<InputField[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
     const [snackbarVisible, setSnackbarVisible] = useState<boolean>(false);
-    const router = useRouter();
 
     const insertInputField = (fieldType: string): void => {
         setInputFields((prevFields) => [
