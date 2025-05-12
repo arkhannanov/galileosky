@@ -1,60 +1,100 @@
 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .buttonGroup {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px; /* Добавлено пространство между кнопками */
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 .button {
-    background-color: #0070f3; /* Синий цвет кнопок */
+    padding: 10px 20px;
+    background-color: #007bff; /* Обычная кнопка синяя */
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 10px 15px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease-in-out;
 }
 
 .button:hover {
-    background-color: #005bb5; /* Темнее при наведении */
-}
-
-.fieldsContainer {
-    margin-top: 20px;
+    background-color: #0056b3;
 }
 
 .createFormButton {
-    background-color: red; /* Красный цвет для кнопки "Создать форму" */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-    margin-top: 20px; /* Пространство сверху */
+    font-size: 1.1rem;
+    background-color: #ffcc00; /* Канареечный цвет */
+    color: black; /* Контрастный текст */
 }
 
 .createFormButton:hover {
-    background-color: darkred; /* Темнее при наведении */
+    background-color: #e6b800; /* Более темный канареечный цвет при наведении */
 }
 
 .centeredButton {
     display: flex;
     justify-content: center;
-    margin-top: 20px; /* Пространство сверху для центрации */
+    margin: 20px 0; /* Отступ вниз от кнопки "Отправить форму" */
 }
 
-.title {
-    text-align: center; /* Center the text */
-    margin-bottom: 20px; /* Add some space below the title */
-    font-size: 24px; /* Adjust font size if needed */
-    color: #333; /* You can choose your desired color */
+.fieldsContainer {
+    margin-top: 30px; /* Отступ от кнопки "Отправить форму" до поля */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Отступ между отдельными полями */
+}
+
+/* Загрузчик (часы) */
+.loader {
+    width: 20px;
+    height: 20px;
+    border: 3px solid transparent;
+    border-top: 3px solid black; /* Тёмный цвет вращения */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Snackbar */
+.snackbar {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

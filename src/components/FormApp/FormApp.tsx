@@ -15,6 +15,8 @@ type InputField = {
 
 const FormApp = () => {
     const [inputFields, setInputFields] = useState<InputField[]>([]);
+    const [loading, setLoading] = useState<boolean>(false);
+    const [snackbarVisible, setSnackbarVisible] = useState<boolean>(false);
     const router = useRouter();
 
     const insertInputField = (fieldType: string): void => {
@@ -41,8 +43,16 @@ const FormApp = () => {
 
     const handleSubmit = () => {
         if (validateForm()) {
-            const query = new URLSearchParams({ fields: JSON.stringify(inputFields) }).toString();
-            router.push(`/completeForm?${query}`);
+            setLoading(true);
+
+            // Имитация запроса
+            setTimeout(() => {
+                setLoading(false);
+                setSnackbarVisible(true);
+
+                // Автоматическое скрытие снекбара через 3 секунды
+                setTimeout(() => setSnackbarVisible(false), 3000);
+            }, 1000);
         }
     };
 
@@ -59,8 +69,16 @@ const FormApp = () => {
 
             {/* Контейнер для центровки кнопки */}
             <div className={styles.centeredButton}>
-                <button className={`${styles.button} ${styles.createFormButton}`} onClick={handleSubmit}>
-                    Создать форму
+                <button
+                    className={`${styles.button} ${styles.createFormButton}`}
+                    onClick={handleSubmit}
+                    disabled={loading} // Блокировка кнопки при загрузке
+                >
+                    {loading ? (
+                        <div className={styles.loader}></div>
+                    ) : (
+                        "Отправить форму"
+                    )}
                 </button>
             </div>
 
@@ -73,6 +91,13 @@ const FormApp = () => {
                     />
                 ))}
             </div>
+
+            {/* Snackbar для уведомления */}
+            {snackbarVisible && (
+                <div className={styles.snackbar}>
+                    Форма успешно отправлена!
+                </div>
+            )}
         </div>
     );
 }
