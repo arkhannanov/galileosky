@@ -1,9 +1,9 @@
-import FormBuilderApp from "@/app/FormBuilderApp";
+import FormApp from "@/components/FormApp/FormApp";
 
 export default function Home() {
   return (
     <div>
-      <FormBuilderApp />
+      <FormApp />
     </div>
   );
 }

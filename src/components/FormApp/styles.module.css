@@ -1,0 +1,60 @@
+.container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.buttonGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Добавлено пространство между кнопками */
+}
+
+.button {
+    background-color: #0070f3; /* Синий цвет кнопок */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #005bb5; /* Темнее при наведении */
+}
+
+.fieldsContainer {
+    margin-top: 20px;
+}
+
+.createFormButton {
+    background-color: red; /* Красный цвет для кнопки "Создать форму" */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Пространство сверху */
+}
+
+.createFormButton:hover {
+    background-color: darkred; /* Темнее при наведении */
+}
+
+.centeredButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Пространство сверху для центрации */
+}
+
+.title {
+    text-align: center; /* Center the text */
+    margin-bottom: 20px; /* Add some space below the title */
+    font-size: 24px; /* Adjust font size if needed */
+    color: #333; /* You can choose your desired color */
+}
